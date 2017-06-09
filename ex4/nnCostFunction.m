@@ -68,7 +68,7 @@ a2 = sigmoid(a1 * Theta1');
 a2 = [ones(m, 1) a2];
 cost = sigmoid(a2 * Theta2');
 J = -(1/m) * sum(sum(y .* log(cost) + (1 - y) .* log(1 - cost)));
-reg = (lambda / (2 * m)) * sum(sum(sum(theta_copy .^ 2)));
+reg = (lambda / (2 * m)) * sum((Theta1(:, 2:end) .^ 2));
 J = J + reg;
 
 
